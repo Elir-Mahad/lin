@@ -1,0 +1,8 @@
+Open up mac terminal and cd into desktop.
+Below is the command for react with redux template that we are using for this build.
+Name of our folder is lin
+
+    --> npx create-react-app lin --template redux
+
+Open up vsc terminal with command + j
+Upload the folder to lin github repository
