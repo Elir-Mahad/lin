@@ -12,6 +12,17 @@ function Sidebar() {
 				<h2> Mahad </h2>
 				<h4> mahad@gmail.com</h4>
 			</div>
+			<div className="sidebar_stat">
+				<p> Who viewed you</p>
+				<div className="sidebar_statNumber">2,543</div>
+				<div className="sidebar_stat">
+					<p> Views on post</p>
+					<p className="sidebare_statNumber"> 2,448</p>
+				</div>
+			</div>
+			<div className="sidebar_bottom">
+				<p> Recent</p>
+			</div>
 		</div>
 	);
 }
