@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Feed.css";
 //
 import InputOption from "./InputOption";
 import Post from "./Post";
+import { db } from "./firebase";
+import firebase from "firebase";
 //
 import CreateIcon from "@material-ui/icons/Create";
 import ImageIcon from "@material-ui/icons/Image";
@@ -15,10 +17,45 @@ function Feed() {
 	//
 	const [posts, SetPosts] = useState([]);
 	//
+	const [input, setInput] = useState("");
+	//
+	useEffect(
+		() => {
+			db.collection("posts").onSnapshot((snapshot) =>
+				//
+				SetPosts(
+					//
+					snapshot.docs.map((doc) => ({
+						//
+						id: doc.id,
+						//
+						data: doc.data()
+						//
+					}))
+				)
+			);
+		},
+		//
+		[]
+	);
+	//
 	const sendPost = (e) => {
 		//
 		e.preventDefault();
 		//
+		db.collection("posts").add({
+			//
+			name: "mahad",
+			//
+			description: "test 1",
+			//
+			message: input,
+			//
+			photoUrl: "",
+			//
+			timestamp: firebase.firestore.FieldValue.serverTimestamp()
+			//
+		});
 	};
 	//
 	return (
@@ -27,8 +64,21 @@ function Feed() {
 				<div className="feed_input">
 					<CreateIcon />
 					<form>
-						<input type="text" />
-						<button type="submit">Send</button>
+						<input
+							//
+							value={input}
+							//
+							onChange={(e) => setInput(e.target.value)}
+							//
+							type="text"
+						/>
+						<button
+							//
+							onClick={sendPost}
+							type="submit"
+						>
+							Send
+						</button>
 					</form>
 				</div>
 				<div className="feed_inputOptions">
@@ -58,11 +108,23 @@ function Feed() {
 					/>
 				</div>
 				{/* posts */}
-				{posts.map((post) => (
-					<Post />
+				{posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+					<Post
+						//
+						key={id}
+						//
+						name={name}
+						//
+						description={description}
+						//
+						message={message}
+						//
+						photoUrl={photoUrl}
+						//
+					/>
 				))}
 				{/*  */}
-				<Post
+				{/* <Post
 					//the component post is imported and defined here
 					name="mahad"
 					// the prop name will have the value mahad
@@ -70,7 +132,7 @@ function Feed() {
 					// the prop description will have the value 'this is a test'
 					message="message"
 					// the prop message will have the value 'wow this worked'
-				/>
+				/> */}
 			</div>
 		</div>
 	);
