@@ -21,19 +21,23 @@ function Feed() {
 	//
 	useEffect(
 		() => {
-			db.collection("posts").onSnapshot((snapshot) =>
+			db.collection("posts")
 				//
-				SetPosts(
+				.orderBy("timestamp", "desc")
+				//
+				.onSnapshot((snapshot) =>
 					//
-					snapshot.docs.map((doc) => ({
+					SetPosts(
 						//
-						id: doc.id,
-						//
-						data: doc.data()
-						//
-					}))
-				)
-			);
+						snapshot.docs.map((doc) => ({
+							//
+							id: doc.id,
+							//
+							data: doc.data()
+							//
+						}))
+					)
+				);
 		},
 		//
 		[]
