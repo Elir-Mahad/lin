@@ -4,6 +4,15 @@ import "./Sidebar.css";
 import { Avatar } from "@material-ui/core";
 
 function Sidebar() {
+	//
+	const recentItem = (topic) => (
+		// the constant recent item will return the below jsx
+		<div className="sidebar_recentItem">
+			<span className="sidebar_hash">0</span>
+			<p>{topic}</p>
+		</div>
+	);
+
 	return (
 		<div className="sidebar">
 			<div className="sidebar_top">
@@ -33,6 +42,21 @@ function Sidebar() {
 			</div>
 			<div className="sidebar_bottom">
 				<p> Recent</p>
+				{recentItem("reactjs")}
+				{/* render the jsx in the const recentItem, 
+				and in the jsx the {topic} will be reactjs  */}
+				{recentItem("programming")}
+				{/* render the jsx in the const recentItem, 
+				and in the jsx the {topic} will be programming  */}
+				{recentItem("software engineering")}
+				{/* render the jsx in the const recentItem, 
+				and in the jsx the {topic} will be sfotware enginnering  */}
+				{recentItem("design")}
+				{/* render the jsx in the const recentItem, 
+				and in the jsx the {topic} will be design  */}
+				{recentItem("developer")}
+				{/* render the jsx in the const recentItem, 
+				and in the jsx the {topic} will be developer  */}
 			</div>
 		</div>
 	);
