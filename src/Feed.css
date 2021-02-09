@@ -5,6 +5,7 @@
 
 .feed_inputContainer {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-evenly;
 }
 
@@ -28,4 +29,12 @@
 	margin-left: 10px;
 	outline-width: 0;
 	font-weight: 600;
+}
+
+.feed_inputOptions {
+	display: flex;
+}
+
+.feed_inputOptions .MuiSvgIcon-root {
+	color: #70b5f9 !important;
 }
