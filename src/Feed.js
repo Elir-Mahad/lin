@@ -2,6 +2,7 @@ import React from "react";
 import "./Feed.css";
 //
 import InputOption from "./InputOption";
+import Post from "./Post";
 //
 import CreateIcon from "@material-ui/icons/Create";
 import ImageIcon from "@material-ui/icons/Image";
@@ -47,7 +48,16 @@ function Feed() {
 						title="Write article"
 					/>
 				</div>
-				{/*  */}
+				{/* posts */}
+				<Post
+					//the component post is imported and defined here
+					name="mahad"
+					// the prop name will have the value mahad
+					description="this is a test"
+					// the prop description will have the value 'this is a test'
+					message="wow this worked"
+					// the prop message will have the value 'wow this worked'
+				/>
 			</div>
 		</div>
 	);
