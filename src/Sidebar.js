@@ -8,7 +8,7 @@ function Sidebar() {
 	const recentItem = (topic) => (
 		// the constant recent item will return the below jsx
 		<div className="sidebar_recentItem">
-			<span className="sidebar_hash">0</span>
+			<span className="sidebar_hash">#</span>
 			<p>{topic}</p>
 		</div>
 	);
