@@ -34,7 +34,3 @@
 .feed_inputOptions {
 	display: flex;
 }
-
-.feed_inputOptions .MuiSvgIcon-root {
-	color: #70b5f9 !important;
-}
