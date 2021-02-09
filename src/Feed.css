@@ -33,4 +33,5 @@
 
 .feed_inputOptions {
 	display: flex;
+	justify-content: space-evenly;
 }

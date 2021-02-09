@@ -47,6 +47,7 @@ function Feed() {
 						title="Write article"
 					/>
 				</div>
+				{/*  */}
 			</div>
 		</div>
 	);
