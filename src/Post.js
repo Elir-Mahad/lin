@@ -15,11 +15,11 @@ function Post({ name, description, message, photoUrl }) {
 					<p> {description}</p>
 					{/* the prop description is passed here */}
 				</div>
-				{/*  */}
-				<div className="post_body">
-					<p>{message}</p>
-					{/* the prop message is passed here */}
-				</div>
+			</div>
+			{/*  */}
+			<div className="post_body">
+				<p>{message}</p>
+				{/* the prop message is passed here */}
 			</div>
 		</div>
 	);
