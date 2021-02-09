@@ -56,6 +56,8 @@ function Feed() {
 			timestamp: firebase.firestore.FieldValue.serverTimestamp()
 			//
 		});
+		setInput("");
+		//clear the inputfield after enter key is pressed
 	};
 	//
 	return (
@@ -124,15 +126,6 @@ function Feed() {
 					/>
 				))}
 				{/*  */}
-				{/* <Post
-					//the component post is imported and defined here
-					name="mahad"
-					// the prop name will have the value mahad
-					description="description"
-					// the prop description will have the value 'this is a test'
-					message="message"
-					// the prop message will have the value 'wow this worked'
-				/> */}
 			</div>
 		</div>
 	);
