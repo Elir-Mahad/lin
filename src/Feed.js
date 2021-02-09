@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Feed.css";
 //
 import InputOption from "./InputOption";
@@ -12,6 +12,15 @@ import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
 //
 
 function Feed() {
+	//
+	const [posts, SetPosts] = useState([]);
+	//
+	const sendPost = (e) => {
+		//
+		e.preventDefault();
+		//
+	};
+	//
 	return (
 		<div className="feed">
 			<div className="feed_inputContainer">
@@ -49,6 +58,10 @@ function Feed() {
 					/>
 				</div>
 				{/* posts */}
+				{posts.map((post) => (
+					<Post />
+				))}
+				{/*  */}
 				<Post
 					//the component post is imported and defined here
 					name="mahad"
